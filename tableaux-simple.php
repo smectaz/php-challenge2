@@ -13,3 +13,9 @@ foreach ($library as $key => $library) {
     echo '<br>';
 
 }
+?>
+résultat
+Les nouvelles milles et une nuits est sortis en 1878
+L'île au trésor est sortis en 1882
+Enlevé ! est sortis en 1886
+Catriona est sortis en 1892
