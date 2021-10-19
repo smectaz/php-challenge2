@@ -1,35 +1,39 @@
 <?php
-function writeSecretSentence(string $objet, string $metier)
-{
-    $sesame = $objet . " s'incline face " . $metier . '.';
-    echo "<br>";
-    return $sesame;
-}
+$characters = [
+    "Negan" => [
+        "city" => "The Sanctuary",
+        "weapon" => "Lucille",
+    ],
+    "Daryl" => [
+        "city" => "Alexandria",
+        "weapon" => "crossbow",
+    ],
+    "Ezekiel" => [
+        "city" => "The Kingdom",
+        "weapon" => "Shiva",
+    ],
+    "Taz" => [
+        "city" => "Lagny",
+        "weapon" => "Tigresse",
+    ],
+];
 
-echo writeSecretSentence('L\'enclume', 'au forgeron');
-echo writeSecretSentence('Le programme', 'au développeur');
-echo writeSecretSentence('La serrure', 'au serrurier');
-echo writeSecretSentence('Le coffre fort', 'au voleur');
+/*echo "Hello World <br>";
+echo $characters["Daryl"]["weapon"];
 echo '<br>';
+print $characters["Negan"]["city"];
 echo '<br>';
-
-//deuxième façon
-
-function writeSecretSentence2(string $objet, string $metier)
-{
-    return "$objet s’incline face  $metier";
-}
-
-echo writeSecretSentence2('L\'enclume', 'au forgeron');
-
+echo $characters["Negan"];
 echo '<br>';
-
-echo writeSecretSentence2('Le programme', 'au développeur');
-
+var_dump($characters["Ezekiel"]["weapon"]);
 echo '<br>';
-
-echo writeSecretSentence2('La serrure', 'au serrurier');
-
+var_dump($characters["Negan"]);
 echo '<br>';
-
-echo writeSecretSentence2('Le coffre fort', 'au voleur');
+echo "<pre>";
+var_dump($characters["Negan"]);
+echo "</pre>";
+echo '<br>';
+var_dump($characters["Daryl"]);
+echo '<br>';
+var_dump($characters);*/
+var_dump($characters["Taz"]);
