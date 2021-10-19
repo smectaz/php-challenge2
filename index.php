@@ -10,6 +10,8 @@ echo writeSecretSentence('L\'enclume', 'au forgeron');
 echo writeSecretSentence('Le programme', 'au développeur');
 echo writeSecretSentence('La serrure', 'au serrurier');
 echo writeSecretSentence('Le coffre fort', 'au voleur');
+echo '<br>';
+echo '<br>';
 
 //deuxième façon
 
