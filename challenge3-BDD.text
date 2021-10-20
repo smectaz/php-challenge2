@@ -1,0 +1,22 @@
+REQUETE 1
+
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Beauxbatons Academy of Magic', '550', 'France');
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Castelobruxo', '380', 'Brazil');
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Durmstrang Institute', '570', 'Norway');
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Hogwarts School of Witchcraft and Wizardry', '450', 'United Kingdom');
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Ilvermorny School of Witchcraft and Wizardry', '300', 'USA');
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Koldovstoretz', '125', 'Russia');
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Mahoutokoro School of Magic', '800', 'Japan');
+INSERT INTO `donkey_db_quest`.`school` (`name`, `capacity`, `country`) VALUES ('Uagadou School of Magic', '350', 'Uganda');
+
+REQUETE 2
+
+UPDATE school SET country = 'Sweden' WHERE id = 3;
+
+REQUETE 3
+
+UPDATE school SET capacity = 700 WHERE id = 7;
+
+REQUETE 4
+
+DELETE FROM school WHERE name LIKE "%Magic%";
