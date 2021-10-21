@@ -1,0 +1,22 @@
+requete 1
+
+SELECT lastname, firstname, role, name
+FROM player
+JOIN wizard ON wizard.id=player.wizard_id
+JOIN team ON team.id=player.team_id
+ORDER BY name, role, lastname, firstname;
+
+requete 2
+
+SELECT firstname, lastname
+FROM player
+JOIN wizard ON wizard.id=player.wizard_id
+WHERE role="seeker"
+ORDER BY lastname, firstname;
+
+requete 3
+
+SELECT firstname, lastname 
+FROM wizard
+LEFT JOIN player ON player.wizard_id=wizard.id
+WHERE role IS NULL;
