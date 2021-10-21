@@ -1,0 +1,31 @@
+requete 1
+
+SELECT t.name,COUNT(*) AS nb_players
+FROM wizard AS w
+JOIN player AS p
+ON w.id = p.wizard_id
+JOIN team AS t
+ON t.id = p.team_id
+GROUP BY t.id
+ORDER BY nb_players DESC;
+
+requete 2
+
+SELECT t.name,COUNT(*) AS nb_players
+FROM wizard AS w
+JOIN player AS p
+ON w.id = p.wizard_id
+JOIN team AS t
+ON t.id = p.team_id
+GROUP BY t.id
+HAVING nb_players >= 14
+ORDER BY t.name ASC;
+
+requete 3
+
+SELECT CONCAT(w.firstname, ' ',w.lastname) AS fullname, p.enrollment_date AS enrollment 
+FROM wizard AS w JOIN player AS p
+ON w.id = p.wizard_id JOIN team AS t
+ON t.id = p.team_id
+WHERE WEEKDAY(p.enrollment_date) = 0
+ORDER BY p.enrollment_date ASC;
