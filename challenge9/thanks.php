@@ -1,6 +1,6 @@
 <?php
 
-function Test($result)
+function test($result)
 {
     $result = stripslashes($result);
     $result = trim($result);
@@ -19,14 +19,14 @@ var_dump($_POST);*/
     if (empty($_POST['nom'])) {
         echo ("Vous devez mettre un nom<br>");
     } else {
-        $nom = Test($_POST['nom']);
+        $nom = test($_POST['nom']);
 
     }
 
     if (empty($_POST['prenom'])) {
         echo ("Vous devez mettre un prenom<br>");
     } else {
-        $prenom = Test($_POST['prenom']);
+        $prenom = test($_POST['prenom']);
 
     }
 
@@ -37,27 +37,27 @@ var_dump($_POST);*/
         if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
             echo "le format de l'email est incorrecte<br>";
         } else {
-            $mail = Test($_POST['mail']);
+            $mail = test($_POST['mail']);
         }
     }
 
     if (empty($_POST['tel'])) {
         echo ("Vous devez mettre un numéro de téléphone pour étre recontacter<br>");
     } else {
-        $tel = Test($_POST['tel']);
+        $tel = test($_POST['tel']);
     }
 
     if (empty($_POST['sujet'])) {
         echo ("Vous devez mettre le service concerné par votre message<br>");
     } else {
-        $sujet = Test($_POST['sujet']);
+        $sujet = test($_POST['sujet']);
 
     }
 
     if (empty($_POST['message'])) {
         echo ("Vous devez mettre un message expliquant votre demande<br>");
     } else {
-        $message = Test($_POST['message']);
+        $message = test($_POST['message']);
 
     }
     if (!empty($nom) && !empty($prenom) && !empty($tel) && !empty($mail) && !empty($sujet) && !empty($message)) {
