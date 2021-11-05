@@ -13,6 +13,6 @@ if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 echo "connected successfully";*/
-if (!empty($_POST['name'])) {
-    $_SESSION['name'] = $_POST['name'];
+if (!empty($_POST['nom'])) {
+    $_SESSION['name'] = $_POST['nom'];
 }

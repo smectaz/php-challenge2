@@ -5,8 +5,8 @@ require 'create/connexion.php';
 <br>
 <form action="read/livre.php" method="post">
     <div>
-        <label for="name">Entrez votre nom</label>
-        <input type="text" name="name" id="name">
+        <label for="nom">Entrez votre nom</label>
+        <input type="text" name="nom" id="nom">
         <br>
         <br>
         <input type="submit" value="valide">

@@ -1,7 +1,7 @@
 <?php
 require "../create/connexion.php";
 
-$query = "SELECT `name`, `title`, book.id, `genre`, `date_edition`, `author_id` FROM book INNER JOIN author ON book.author_id=author.id";
+$query = "SELECT `name`, `title`, book.id, `genre`, `date_edition`, `author_id`, `price` FROM book INNER JOIN author ON book.author_id=author.id";
 
 if (isset($_POST['author_id'])) {
     $query .= ' WHERE author.id=' . $_POST['author_id'];
@@ -66,10 +66,18 @@ echo ($row['name']); ?></option>
 
 
     <?php
+if (!empty($_POST['achat'])) {
+    echo "Votre commande a été validée.<br>";
+}
+
+if (!empty($_POST['retour'])) {
+    echo "Vous pouvez continuer vos achats.<br><br>";
+}
 
 if (!empty($_SESSION['name'])) {
     //$_SESSION['name'] = $_POST['name'];
     echo "Bonjour " . $_SESSION['name'] . "<br>";
+
     ?>
     <a href="../logout.php">Déconnectez-vous</a>
     <br>
@@ -102,8 +110,13 @@ echo ("Publié en: " . $row["date_edition"]);
         ?>
         </div>
         <hr>
-        <div class="button">
+        <?php
+echo ("Prix du livre: " . $row["price"]);
+        ?>
+        <hr>
 
+
+        <div class="button">
             <form action="../update/update.php" method="post">
                 <input type="text" name="id" id="id" value="<?php echo ($row["id"]); ?> " hidden>
                 <input type="text" name="title" id="title" value="<?php echo ($row["title"]); ?> " hidden>
@@ -112,7 +125,8 @@ echo ("Publié en: " . $row["date_edition"]);
                 <input type="text" name="genre" id="genre" value="<?php echo ($row["genre"]); ?> " hidden>
                 <input type="text" name="date_edition" id="date_edition" value="<?php echo ($row["date_edition"]); ?>"
                     hidden>
-                <button type="submit">modifier</button>
+                <input type="text" name="price" id="price" value="<?php echo ($row["price"]); ?>" hidden>
+                <button type="submit">Modifier</button>
             </form>
             <form action="../delete/delete.php" method="post">
                 <input type="text" name="title" id="title" value="<?php echo ($row["title"]); ?> " hidden>
@@ -120,9 +134,24 @@ echo ("Publié en: " . $row["date_edition"]);
                 <button type="submit">Supprimer</button>
             </form>
         </div>
-
         <br>
-
+        <form action="../cart.php" method="post">
+            <input type="text" name="id" id="id" value="<?php echo ($row["id"]); ?> " hidden>
+            <input type="text" name="title" id="title" value="<?php echo ($row["title"]); ?> " hidden>
+            <input type="text" name="author_id" id="author_id" value="<?php echo ($row["author_id"]); ?> " hidden>
+            <input type="text" name="name" id="name" value="<?php echo ($row["name"]); ?> " hidden>
+            <input type="text" name="genre" id="genre" value="<?php echo ($row["genre"]); ?> " hidden>
+            <input type="text" name="date_edition" id="date_edition" value="<?php echo ($row["date_edition"]); ?>"
+                hidden>
+            <input type="text" name="price" id="price" value="<?php echo ($row["price"]); ?>" hidden>
+            <br>
+            <label for="quantity">quantité de livre</label>
+            <input type="number" name="quantity" id="quantity">
+            <br>
+            <br>
+            <button type="submit">Acheter</button>
+        </form>
+        <br>
     </section>
     <?php
 }
